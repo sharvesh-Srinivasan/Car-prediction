@@ -6,7 +6,7 @@ import joblib
 import os
 
 app = Flask(__name__)
-CORS(app, origins=["https://your-vercel-app.vercel.app"])
+CORS(app, origins=["https://car-prediction-ten.vercel.app"])
 
 # Load model and preprocessors
 try:
