@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
 import pandas as pd
@@ -6,7 +6,7 @@ import joblib
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://your-vercel-app.vercel.app"])
 
 # Load model and preprocessors
 try:
@@ -22,7 +22,7 @@ continious_feature = ['milage', 'age', 'horse_power', 'liter_capacity', 'gear']
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return "Car Price Prediction API is running!"
 
 @app.route('/predict', methods=['POST'])
 def predict():
